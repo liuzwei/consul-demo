@@ -1,14 +1,14 @@
 spring:
   application:
-    name: consul-producer
+    name: consul-producer  #程序名称
   cloud:
     consul:
-      host: 10.0.0.100
-      port: 8500
+      host: 10.0.0.100 #consul节点IP
+      port: 8500       #consul节点端口
       discovery:
-        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
-        health-check-path: /actuator/health
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port} #实例ID
+        health-check-path: /actuator/health                                                      #健康检查
         health-check-interval: 10s
 
 server:
-  port: 9091
+  port: 9091  #消费者服务端口
